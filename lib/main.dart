@@ -1,3 +1,4 @@
+import 'package:bookly_app/features/splash_feature/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,22 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: MyHomePage(),
+      debugShowCheckedModeBanner: false,
+      home: SplashView(),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: const Center(
-        child: Text('Ahmeddd'),
-      ),
-    );
-  }
-}
 
