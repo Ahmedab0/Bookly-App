@@ -18,6 +18,7 @@ class CustomSlider extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.28,
       child: ListView.builder(
+        padding: const EdgeInsets.only(left: 20),
         scrollDirection: Axis.horizontal,
         itemCount: items.length,
         itemBuilder: (context, index) {
