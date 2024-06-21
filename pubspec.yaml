@@ -93,4 +93,5 @@ flutter:
   assets:
     - assets/images/test.png
     - assets/images/Logo.png
+    - assets/images/book.png
 
