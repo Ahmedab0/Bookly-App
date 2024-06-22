@@ -3,7 +3,8 @@ import 'package:bookly_app/features/splash_feature/presentation/views/splash_vie
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
-import 'features/Home/views/Home.dart';
+import 'features/Home_Feature/views/Home.dart';
+import 'features/Home_Feature/views/book_details_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,9 +27,9 @@ class MyApp extends StatelessWidget {
         case Home.routeNamed:
           return PageTransition(child: const Home(), type: PageTransitionType.leftToRight);
           //break;
-    /*    case SecondPage.routeNamed:
-          return PageTransition(child: const SecondPage(), type: PageTransitionType.leftToRight,settings: settings);
-          break;*/
+       case BookDetailsView.routeNamed:
+          return PageTransition(child: const BookDetailsView(), type: PageTransitionType.leftToRight);
+          //break;
         default:
           return null;
       }

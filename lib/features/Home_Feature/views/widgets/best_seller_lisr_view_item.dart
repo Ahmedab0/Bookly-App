@@ -1,6 +1,10 @@
+import 'dart:developer';
+
+import 'package:bookly_app/features/Home_Feature/views/book_details_view.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/utils/assets.dart';
+import 'book_rating.dart';
 
 class BestSellerItem extends StatelessWidget {
   const BestSellerItem({super.key});
@@ -8,7 +12,10 @@ class BestSellerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){},
+      onTap: (){
+        log('message: clicked');
+        Navigator.pushNamed(context, BookDetailsView.routeNamed);
+        },
       child: Card(
         color: Colors.transparent,
         elevation: 0,
@@ -71,29 +78,4 @@ class BestSellerItem extends StatelessWidget {
     );
   }
 }
-class BookRating extends StatelessWidget {
-  const BookRating({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return const Row(
-      children: [
-        Icon(
-          Icons.star,
-          color: Color(0xffFFDD4F),
-          size: 20,
-        ),
-        Padding(
-          padding: EdgeInsets.only(left: 6.0, right: 10),
-          child: Text('4.8',
-              style: TextStyle(
-                fontSize: 16,
-              )),
-        ),
-        Text('(2390)',
-            style: TextStyle(
-                fontSize: 14, color: Color(0xff707070))),
-      ],
-    );
-  }
-}
