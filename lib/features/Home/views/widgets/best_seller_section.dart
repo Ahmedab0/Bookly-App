@@ -17,9 +17,8 @@ class BestSellerSection extends StatelessWidget {
             style: TextStyle(fontSize: 18),
           ),
           SizedBox(height: 16,),
-          Expanded(
-            child: BestSellerListView(),
-          ),
+
+          Expanded(child: BestSellerListView()),
         ],
       ),
     );
