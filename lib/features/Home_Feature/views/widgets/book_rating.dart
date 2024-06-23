@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class BookRating extends StatelessWidget {
@@ -7,6 +6,7 @@ class BookRating extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Icon(
           Icons.star,
@@ -20,9 +20,13 @@ class BookRating extends StatelessWidget {
                 fontSize: 16,
               )),
         ),
-        Text('(2390)',
-            style: TextStyle(
-                fontSize: 14, color: Color(0xff707070))),
+        Text(
+          '(2390)',
+          style: TextStyle(
+            fontSize: 14,
+            color: Color(0xff707070),
+          ),
+        ),
       ],
     );
   }

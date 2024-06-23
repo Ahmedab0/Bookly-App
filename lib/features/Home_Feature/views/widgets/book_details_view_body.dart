@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import 'custom_book_details_appBar.dart';
@@ -9,12 +8,10 @@ class BookDetailsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Column(
-        children: [
-          CustomBookDetailsAppBar(),
-        ],
-
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        CustomBookDetailsAppBar(),
+      ],
     );
   }
 }
-
-
