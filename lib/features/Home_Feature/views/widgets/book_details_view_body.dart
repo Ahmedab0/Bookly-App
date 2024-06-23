@@ -9,55 +9,40 @@ class BookDetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.sizeOf(context).width;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        CustomBookDetailsAppBar(),
-        BookDetails(),
-        SizedBox(
-          height: 40,
-        ),
-        Container(
-          color: Colors.cyan,
-          child: Text('hhhhhhhhh'),
-        ),
-      ],
-    );
-  }
-}
-
-class BookDetails extends StatelessWidget {
-  const BookDetails({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    var width = MediaQuery.sizeOf(context).width;
-    return Column(
-      children: [
+        const CustomBookDetailsAppBar(),
+        //BookDetails(),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: width * 0.23),
+          padding: EdgeInsets.symmetric(horizontal: width * 0.27),
           child: const BookImgFeature(),
         ),
         const SizedBox(
           height: 40,
         ),
-        Text(
+        const Text(
           'The Jungle Book',
           style: TextStyle(fontSize: 30),
         ),
-        SizedBox(
+        const SizedBox(
           height: 4,
         ),
-        Text('Rudyard Kipling',
+        const Text('Rudyard Kipling',
             style: TextStyle(
               fontSize: 18,
               color: Color(0xff707070),
             )),
-        SizedBox(
+        const SizedBox(
           height: 14,
         ),
-        BookRating(),
+        const BookRating(),
+        const SizedBox(height: 37,),
+
       ],
     );
   }
 }
+
+
