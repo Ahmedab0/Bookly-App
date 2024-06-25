@@ -1,3 +1,4 @@
+import 'package:bookly_app/features/Search_Feature/presentation/views/search_view.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/utils/assets.dart';
@@ -8,7 +9,7 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 24.0,right: 24, top: 40, bottom: 24),
+      padding: const EdgeInsets.all(24),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -17,7 +18,9 @@ class CustomAppBar extends StatelessWidget {
             height: 18,
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, SearchView.routeNamed);
+            },
             icon: const Icon(
               Icons.search,
               size: 26,
