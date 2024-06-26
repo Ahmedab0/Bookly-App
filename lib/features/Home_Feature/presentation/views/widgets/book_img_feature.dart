@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../../core/utils/assets.dart';
+import '../../../../../core/utils/assets.dart';
 
 class BookImgFeature extends StatelessWidget {
   const BookImgFeature({super.key});

@@ -4,8 +4,8 @@ import 'package:bookly_app/features/splash_feature/presentation/views/splash_vie
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
-import 'features/Home_Feature/views/Home.dart';
-import 'features/Home_Feature/views/book_details_view.dart';
+import 'features/Home_Feature/presentation/views/Home.dart';
+import 'features/Home_Feature/presentation/views/book_details_view.dart';
 
 void main() {
   runApp(const MyApp());
