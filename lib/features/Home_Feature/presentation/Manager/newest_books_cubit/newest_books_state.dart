@@ -8,10 +8,11 @@ final class NewestBooksLoadingState extends NewestBooksState {}
 final class NewestBooksSuccessState extends NewestBooksState {
   final List<BookModel> books;
 
-  NewestBooksSuccessState(this.books);
+  NewestBooksSuccessState({required this.books});
+
 }
 final class NewestBooksFailureState extends NewestBooksState {
   final String errorMsg;
 
-  NewestBooksFailureState(this.errorMsg);
+  NewestBooksFailureState({required this.errorMsg});
 }
