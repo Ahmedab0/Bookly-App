@@ -1,31 +1,13 @@
 import 'package:bookly_app/constants.dart';
-import 'package:bookly_app/features/Search_Feature/presentation/views/search_view.dart';
+import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/features/splash_feature/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
-import 'package:page_transition/page_transition.dart';
 
-import 'features/Home_Feature/presentation/views/Home.dart';
-import 'features/Home_Feature/presentation/views/book_details_view.dart';
 
 void main() {
   runApp(const MyApp());
 }
-// Routing Method // the better is moving it to appRouting.dart file
-PageTransition? switchRoute(RouteSettings settings) {
-  switch (settings.name) {
-    case Home.routeNamed:
-      return PageTransition(
-          child: const Home(), type: PageTransitionType.leftToRight);
-    case BookDetailsView.routeNamed:
-      return PageTransition(
-          child: const BookDetailsView(), type: PageTransitionType.leftToRight);
-    case SearchView.routeNamed:
-      return PageTransition(
-          child: const SearchView(), type: PageTransitionType.leftToRight);
-    default:
-      return null;
-  }
-}
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -37,7 +19,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       home: const SplashView(),
-      onGenerateRoute: switchRoute,
+      onGenerateRoute: AppRouter().switchRoute,
          /* (settings) {
         switch (settings.name) {
           case Home.routeNamed:
