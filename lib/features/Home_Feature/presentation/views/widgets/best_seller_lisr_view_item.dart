@@ -1,14 +1,16 @@
 import 'dart:developer';
 
+import 'package:bookly_app/features/Home_Feature/data/models/BookModel.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utils/assets.dart';
 import '../book_details_view.dart';
 import 'book_rating.dart';
+import 'custom_book_image.dart';
 
 class BestSellerItem extends StatelessWidget {
-  const BestSellerItem({super.key});
+  const BestSellerItem({super.key, required this.bookModel});
 
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -22,47 +24,37 @@ class BestSellerItem extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(0),
         ),
-        child: Row(
+        child:  Row(
           children: [
             SizedBox(
               height: 125,
-              child: AspectRatio(
-                aspectRatio: 70 / 105,
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8.0),
-                      image: const DecorationImage(
-                    fit: BoxFit.fill,
-                    image: AssetImage(AssetsData.book),
-                  )),
-                ),
-              ),
+              child: CustomBookImage(imgUrl: bookModel.volumeInfo!.imageLinks!.smallThumbnail ?? 'assets/images/noData.png',),
             ),
             const SizedBox(width: 30,),
-            const Expanded(
+            Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'The Jungle Book',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    bookModel.volumeInfo!.title!,
+                    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 3.0),
+                    padding: const EdgeInsets.symmetric(vertical: 3.0),
                     child: Text(
-                      'Rudyard Kipling',
-                      style: TextStyle(fontSize: 14, color: Color(0xff707070)),
+                      bookModel.volumeInfo!.authors!.first,
+                      style: const TextStyle(fontSize: 14, color: Color(0xff707070)),
                     ),
                   ),
-                  Row(
+                  const Row(
                     children: [
                       Text(
-                        '19.99 €',
+                        'Free',
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 18,
                         ),
                       ),
                       Expanded(child: SizedBox()),

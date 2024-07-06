@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-import 'best_seller_section.dart';
+import 'best_seller_list_view.dart';
 import 'custom_app_bar.dart';
 import 'custom_slider.dart';
 
@@ -11,20 +12,34 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: const CustomScrollView(
+        physics: BouncingScrollPhysics(),
         slivers: [
           SliverToBoxAdapter(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomAppBar(),
                 CustomSlider(),
                 SizedBox(
                   height: 40,
                 ),
+                Padding(
+                  padding: EdgeInsets.only(left: 20.0),
+                  child: Text(
+                    'Newest Books',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+                SizedBox(height: 16,),
               ],
             ),
           ),
           SliverFillRemaining(
-            child: BestSellerSection(),
+            hasScrollBody: false,
+            child: BestSellerListView()
+            //BestSellerSection(),
+
           ),
         ],
       ),

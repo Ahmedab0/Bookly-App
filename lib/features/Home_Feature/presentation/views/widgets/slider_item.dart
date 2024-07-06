@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'book_img_feature.dart';
+import 'custom_book_image.dart';
 
 class SliderItem extends StatelessWidget {
   const SliderItem({super.key, this.imgUrl});
@@ -10,7 +10,7 @@ class SliderItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(right: 12.0),
-      child: BookImgFeature(imgUrl: imgUrl),
+      child: CustomBookImage(imgUrl: imgUrl),
       /*AspectRatio(
         aspectRatio: 129 / 193,
         child: Container(

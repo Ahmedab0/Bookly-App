@@ -1,4 +1,3 @@
-import 'package:bookly_app/features/Home_Feature/presentation/views/widgets/book_img_feature.dart';
 import 'package:flutter/material.dart';
 
 import 'book_details_list_view_section.dart';
@@ -21,7 +20,7 @@ class BookDetailsViewBody extends StatelessWidget {
               const CustomBookDetailsAppBar(),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: width * 0.27),
-                child: const BookImgFeature(),
+                child: null ,//const CustomBookImage(imgUrl: ,),
               ),
               const SizedBox(
                 height: 40,

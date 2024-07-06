@@ -13,7 +13,7 @@ class BestSellerSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Best Seller',
+            'Newest Books',
             style: TextStyle(fontSize: 18),
           ),
           SizedBox(height: 16,),
