@@ -16,6 +16,7 @@ dependencies:
   flutter_bloc: ^8.1.6
   get_it: ^7.7.0
   fluttertoast: ^8.2.6
+  cached_network_image: ^3.3.1
 
 
 
@@ -39,4 +40,5 @@ flutter:
     - assets/images/Logo.png
     - assets/images/book.png
     - assets/images/noData.png
+    - assets/images/placeholder.png
 
