@@ -11,12 +11,15 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: RefreshIndicator(
-            onRefresh: () => BlocProvider.of<FeaturedBooksCubit>(context)
-                .fetchFeaturedBooks(),
-            child: const HomeViewBody()),
+    return RefreshIndicator(
+      onRefresh: () {
+        return BlocProvider.of<FeaturedBooksCubit>(context).fetchFeaturedBooks();
+
+      },
+      child: const Scaffold(
+        body: SafeArea(
+          child: HomeViewBody(),
+        ),
       ),
     );
   }

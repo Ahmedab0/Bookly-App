@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:bookly_app/features/Home_Feature/data/models/BookModel.dart';
 import 'package:flutter/material.dart';
@@ -15,8 +14,7 @@ class BestSellerItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        log('message: clicked');
-        Navigator.pushNamed(context, BookDetailsView.routeNamed);
+        Navigator.pushNamed(context, BookDetailsView.routeNamed,arguments: bookModel);
         },
       child: Card(
         color: Colors.transparent,

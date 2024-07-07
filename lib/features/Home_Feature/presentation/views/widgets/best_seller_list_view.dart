@@ -13,15 +13,19 @@ class BestSellerListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<NewestBooksCubit, NewestBooksState>(
       builder: (context, state) {
-        if(state is NewestBooksSuccessState) {
+        if (state is NewestBooksSuccessState) {
           return Padding(
             padding: const EdgeInsets.only(left: 20.0, right: 20.0),
             child: Column(
-              children: List.generate(state.books.length, (index) =>
-               Padding(
-                padding: const EdgeInsets.only(bottom: 10),
-                child: BestSellerItem(bookModel: state.books[index],),
-              ),),
+              children: List.generate(
+                state.books.length,
+                (index) => Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: BestSellerItem(
+                    bookModel: state.books[index],
+                  ),
+                ),
+              ),
             ),
           );
         } else if (state is NewestBooksFailureState) {
@@ -33,5 +37,3 @@ class BestSellerListView extends StatelessWidget {
     );
   }
 }
-
-

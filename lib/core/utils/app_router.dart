@@ -16,7 +16,7 @@ class AppRouter {
             child: const Home(), type: PageTransitionType.leftToRight);
       case BookDetailsView.routeNamed:
         return PageTransition(
-            child: const BookDetailsView(), type: PageTransitionType.leftToRight);
+            child: const BookDetailsView(), type: PageTransitionType.leftToRight, settings: settings);
       case SearchView.routeNamed:
         return PageTransition(
             child: const SearchView(), type: PageTransitionType.leftToRight);
